@@ -1,0 +1,17 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header"><h4>Editar nota</h4></div>
+        <div class="card-body">
+            <form action="/editar-nota/{{note._id}}?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="title" value="{{{note.title}}}" placeholder="Titulo de la nota">
+                </div>
+                <div class="form-group">
+                    <textarea name="description" class="form-control" value="{{{note.description}}}">{{{note.description}}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

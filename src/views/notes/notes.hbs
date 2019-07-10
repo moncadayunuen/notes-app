@@ -1,0 +1,24 @@
+<div class="row">
+    {{#each notes}}
+    <div class="col-md-3">
+        <div class="card p-3">
+            <div class="card-title d-flex align-items-center justify-content-between">
+                <h4>{{title}}</h4>
+                <a href="/editar-nota/{{{id}}}"><i class="fas fa-edit mx-2"></i></a>
+            </div>
+            <div class="card-text py-2">{{description}}</div>
+            <form action="/eliminar-nota/{{_id}}?_method=DELETE" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-block">Borrar</button>
+            </form>
+        </div>
+    </div>
+    {{else}}
+    <div class="card p-3 mx-auto">
+        <div class="card-title d-flex align-items-center justify-content-between">
+            <h4>No hay notas aún</h4>
+        </div>
+        <a href="/nueva-nota" class="btn btn-success btn-block">Crea una nota</a>
+    </div>
+    {{/each}}
+</div>
